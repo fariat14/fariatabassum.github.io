@@ -1,499 +1,191 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Faria Tabassum | Data Analyst</title>
 
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z9KDB13TXN"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
 
-  <title>Faria Tabassum | Portfolio</title>
+    gtag('config', 'G-Z9KDB13TXN');
+  </script>
 
   <style>
-
-    *{
-      margin:0;
-      padding:0;
-      box-sizing:border-box;
-      scroll-behavior:smooth;
-    }
-
-    body{
+    body {
       font-family: Arial, sans-serif;
-      background:#f8f6f2;
-      color:#1f2937;
-      line-height:1.7;
+      margin: 0;
+      padding: 0;
+      background-color: #f8f9fa;
+      color: #333;
     }
 
-    nav{
-      position:sticky;
-      top:0;
-      background:white;
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      padding:20px 8%;
-      box-shadow:0 2px 10px rgba(0,0,0,0.06);
-      z-index:1000;
+    header {
+      background-color: #111827;
+      color: white;
+      text-align: center;
+      padding: 50px 20px;
     }
 
-    nav h2{
-      font-size:22px;
+    header img {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 20px;
+      border: 4px solid white;
     }
 
-    nav ul{
-      display:flex;
-      list-style:none;
-      gap:24px;
+    h1 {
+      margin: 10px 0;
+      font-size: 36px;
     }
 
-    nav a{
-      text-decoration:none;
-      color:#1f2937;
-      font-weight:bold;
-      font-size:14px;
+    p {
+      line-height: 1.6;
     }
 
-    .hero{
-      min-height:90vh;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      padding:80px 8%;
-      background:linear-gradient(135deg,#111827,#374151);
-      color:white;
+    .container {
+      max-width: 1000px;
+      margin: auto;
+      padding: 40px 20px;
     }
 
-    .hero-content{
-      display:flex;
-      align-items:center;
-      gap:60px;
-      max-width:1200px;
-      width:100%;
-      flex-wrap:wrap;
+    .section {
+      margin-bottom: 50px;
     }
 
-    .hero-text{
-      flex:1;
-      min-width:300px;
+    .project {
+      background: white;
+      padding: 20px;
+      margin-top: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.08);
     }
 
-    .hero-text h3{
-      font-size:20px;
-      color:#d1d5db;
-      margin-bottom:15px;
-      font-weight:400;
+    a {
+      color: #2563eb;
+      text-decoration: none;
     }
 
-    .hero-text h1{
-      font-size:72px;
-      line-height:1;
-      margin-bottom:20px;
+    a:hover {
+      text-decoration: underline;
     }
 
-    .hero-text p{
-      max-width:600px;
-      font-size:18px;
-      margin-bottom:30px;
+    footer {
+      text-align: center;
+      padding: 30px;
+      background: #111827;
+      color: white;
     }
 
-    .button{
-      display:inline-block;
-      padding:14px 24px;
-      background:white;
-      color:#111827;
-      border-radius:30px;
-      text-decoration:none;
-      font-weight:bold;
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 15px;
     }
 
-    .hero-image{
-      flex:1;
-      display:flex;
-      justify-content:center;
-      min-width:280px;
+    .skill {
+      background: #e5e7eb;
+      padding: 8px 14px;
+      border-radius: 20px;
+      font-size: 14px;
     }
-
-    .profile-pic{
-      width:320px;
-      height:320px;
-      object-fit:cover;
-      border-radius:50%;
-      border:6px solid rgba(255,255,255,0.9);
-      box-shadow:0 10px 30px rgba(0,0,0,0.25);
-    }
-
-    section{
-      max-width:1200px;
-      margin:auto;
-      padding:90px 8%;
-    }
-
-    .section-title{
-      font-size:42px;
-      margin-bottom:35px;
-    }
-
-    .card{
-      background:white;
-      padding:35px;
-      border-radius:22px;
-      box-shadow:0 8px 24px rgba(0,0,0,0.08);
-      margin-bottom:25px;
-    }
-
-    .grid{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-      gap:25px;
-    }
-
-    .tag{
-      display:inline-block;
-      background:#e5e7eb;
-      padding:8px 14px;
-      border-radius:20px;
-      margin:5px;
-      font-size:14px;
-    }
-
-    .project-link{
-      display:inline-block;
-      margin-top:18px;
-      color:#111827;
-      font-weight:bold;
-      text-decoration:none;
-    }
-
-    footer{
-      background:#111827;
-      color:white;
-      text-align:center;
-      padding:35px;
-      margin-top:50px;
-    }
-
-    @media(max-width:900px){
-
-      .hero-content{
-        flex-direction:column-reverse;
-        text-align:center;
-      }
-
-      .hero-text h1{
-        font-size:52px;
-      }
-
-      .profile-pic{
-        width:240px;
-        height:240px;
-      }
-
-      nav{
-        flex-direction:column;
-        gap:15px;
-      }
-
-      nav ul{
-        flex-wrap:wrap;
-        justify-content:center;
-      }
-
-    }
-
   </style>
-
 </head>
 
 <body>
 
-  <nav>
+  <header>
+    <img src="Image_Faria.png" alt="Faria Tabassum">
 
-    <h2>Faria Tabassum</h2>
+    <h1>Faria Tabassum</h1>
 
-    <ul>
-      <li><a href="#about">About</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#experience">Experience</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
+    <p>
+      Data Analyst | Finance Transformation | SQL | Snowflake | Power BI | Tableau
+    </p>
 
-  </nav>
+    <p>
+      <a href="https://www.linkedin.com/in/fariatabassumecon/" target="_blank">LinkedIn</a> |
+      <a href="https://github.com/fariat14" target="_blank">GitHub</a> |
+      <a href="https://medium.com/@t.fariajune" target="_blank">Medium</a>
+    </p>
+  </header>
 
-  <div class="hero">
+  <div class="container">
 
-    <div class="hero-content">
+    <div class="section">
+      <h2>About Me</h2>
 
-      <div class="hero-text">
+      <p>
+        I am a Data Analyst with experience in Finance Transformation,
+        business analytics, pricing analytics, and research.
+        My background in finance and economics helps me bridge the gap
+        between technical analytics and business decision-making.
+      </p>
 
-        <h3>
-          Data Analyst | Finance Transformation | Business Intelligence
-        </h3>
+      <p>
+        Currently, I work with SQL, Snowflake, Azure Data Factory,
+        Power BI, Tableau, and ERP data mapping initiatives.
+      </p>
+    </div>
 
-        <h1>
-          Faria<br>
-          Tabassum
-        </h1>
+    <div class="section">
+      <h2>Skills</h2>
+
+      <div class="skills">
+        <div class="skill">SQL</div>
+        <div class="skill">Snowflake</div>
+        <div class="skill">Power BI</div>
+        <div class="skill">Tableau</div>
+        <div class="skill">Excel</div>
+        <div class="skill">Python</div>
+        <div class="skill">Azure Data Factory</div>
+        <div class="skill">Data Visualization</div>
+        <div class="skill">Business Analytics</div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>Projects</h2>
+
+      <div class="project">
+        <h3>Netflix Tableau Dashboard</h3>
 
         <p>
-          Data Analyst with experience in finance transformation,
-          ERP source-to-target mapping, SQL, Snowflake,
-          Power BI, Tableau, and analytics.
+          Interactive dashboard analyzing Netflix movies and TV shows
+          using Tableau visualizations.
         </p>
 
-        <a class="button" href="#projects">
-          View Projects
+        <a href="https://public.tableau.com/views/NetflixDashboard_17166085114810/Netflix?:language=en-US&:display_count=n&:origin=viz_share_link" target="_blank">
+          View Project
         </a>
-
       </div>
 
-      <div class="hero-image">
+      <div class="project">
+        <h3>Citi Bike Trips Analysis</h3>
 
-        <img src="Image_Faria.png" class="profile-pic">
+        <p>
+          Tableau dashboard analyzing Citi Bike usage trends,
+          trip duration, and rider behavior.
+        </p>
 
+        <a href="https://public.tableau.com/views/citibiketrips_15935502394800/Feb2018?:language=en-US&:display_count=n&:origin=viz_share_link" target="_blank">
+          View Project
+        </a>
       </div>
-
     </div>
 
   </div>
 
-  <section id="about">
-
-    <h2 class="section-title">
-      About Me
-    </h2>
-
-    <div class="card">
-
-      <p>
-        I am a business-focused Data Analyst with experience
-        in finance transformation, analytics, pricing,
-        ERP mapping, dashboard reporting, and research.
-        I enjoy solving business problems using data,
-        visualization, and automation.
-      </p>
-
-    </div>
-
-  </section>
-
-  <section id="projects">
-
-    <h2 class="section-title">
-      Featured Projects
-    </h2>
-
-    <div class="grid">
-
-      <div class="card">
-
-        <h3>
-          Netflix Content Analysis Dashboard
-        </h3>
-
-        <br>
-
-        <p>
-          Interactive Tableau dashboard analyzing Netflix titles,
-          genres, ratings, and release trends.
-        </p>
-
-        <br>
-
-        <span class="tag">Tableau</span>
-        <span class="tag">Dashboard</span>
-        <span class="tag">Data Visualization</span>
-
-        <br>
-
-        <a class="project-link"
-        href="https://public.tableau.com/views/NetflixDashboard_17166085114810/Netflix?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link"
-        target="_blank">
-
-        View Dashboard →
-
-        </a>
-
-      </div>
-
-      <div class="card">
-
-        <h3>
-          Business Analytics Dashboard
-        </h3>
-
-        <br>
-
-        <p>
-          Tableau dashboard for business analytics,
-          trend analysis, and visual storytelling.
-        </p>
-
-        <br>
-
-        <span class="tag">Tableau</span>
-        <span class="tag">Analytics</span>
-        <span class="tag">Business Intelligence</span>
-
-        <br>
-
-        <a class="project-link"
-        href="https://public.tableau.com/shared/39788TBG3?:display_count=n&:origin=viz_share_link"
-        target="_blank">
-
-        View Dashboard →
-
-        </a>
-
-      </div>
-
-      <div class="card">
-
-        <h3>
-          GitHub Projects Repository
-        </h3>
-
-        <br>
-
-        <p>
-          Collection of SQL, analytics,
-          and business intelligence projects.
-        </p>
-
-        <br>
-
-        <span class="tag">GitHub</span>
-        <span class="tag">SQL</span>
-        <span class="tag">Analytics</span>
-
-        <br>
-
-        <a class="project-link"
-        href="https://github.com/fariat14/Projects-1"
-        target="_blank">
-
-        View GitHub →
-
-        </a>
-
-      </div>
-
-    </div>
-
-  </section>
-
-  <section id="skills">
-
-    <h2 class="section-title">
-      Skills & Tools
-    </h2>
-
-    <div class="card">
-
-      <span class="tag">SQL</span>
-      <span class="tag">Snowflake</span>
-      <span class="tag">Power BI</span>
-      <span class="tag">Tableau</span>
-      <span class="tag">Python</span>
-      <span class="tag">Excel</span>
-      <span class="tag">ERP Mapping</span>
-      <span class="tag">Finance Analytics</span>
-      <span class="tag">Business Intelligence</span>
-      <span class="tag">Data Visualization</span>
-
-    </div>
-
-  </section>
-
-  <section id="experience">
-
-    <h2 class="section-title">
-      Experience
-    </h2>
-
-    <div class="card">
-
-      <h3>
-        Data Analyst — Johnson Controls
-      </h3>
-
-      <br>
-
-      <p>
-        Working on finance transformation projects,
-        ERP source-to-target mapping, SQL validation,
-        reporting, and analytics.
-      </p>
-
-      <br><br>
-
-      <h3>
-        Research & Market Analytics
-      </h3>
-
-      <br>
-
-      <p>
-        Experience in economic research,
-        market research, survey analysis,
-        and business insights.
-      </p>
-
-    </div>
-
-  </section>
-
-  <section id="contact">
-
-    <h2 class="section-title">
-      Contact
-    </h2>
-
-    <div class="card">
-
-      <p>
-        Email:
-        <a href="mailto:faria.econ@gmail.com">
-          faria.econ@gmail.com
-        </a>
-      </p>
-
-      <br>
-
-      <p>
-        LinkedIn:
-        <a href="https://www.linkedin.com/in/fariatabassumecon/"
-        target="_blank">
-
-        linkedin.com/in/fariatabassumecon
-
-        </a>
-      </p>
-
-      <br>
-
-      <p>
-        GitHub:
-        <a href="https://github.com/fariat14/Projects-1"
-        target="_blank">
-
-        github.com/fariat14
-
-        </a>
-      </p>
-
-    </div>
-
-  </section>
-
   <footer>
-
-    <p>
-      © 2026 Faria Tabassum
-    </p>
-
+    © 2026 Faria Tabassum
   </footer>
 
 </body>
-
 </html>
