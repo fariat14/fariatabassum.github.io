@@ -3,189 +3,694 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Faria Tabassum | Data Analyst</title>
-
-  <!-- Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z9KDB13TXN"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'G-Z9KDB13TXN');
-  </script>
+  <title>Faria Tabassum | Analytics & AI Portfolio</title>
 
   <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
     body {
       font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #f8f9fa;
-      color: #333;
-    }
-
-    header {
-      background-color: #111827;
-      color: white;
-      text-align: center;
-      padding: 50px 20px;
-    }
-
-    header img {
-      width: 140px;
-      height: 140px;
-      border-radius: 50%;
-      object-fit: cover;
-      margin-bottom: 20px;
-      border: 4px solid white;
-    }
-
-    h1 {
-      margin: 10px 0;
-      font-size: 36px;
-    }
-
-    p {
+      background: #faf7f2;
+      color: #1f2933;
       line-height: 1.6;
     }
 
-    .container {
-      max-width: 1000px;
+    a { color: inherit; text-decoration: none; }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(250, 247, 242, 0.95);
+      border-bottom: 1px solid #e5ded5;
+    }
+
+    nav {
+      max-width: 1120px;
       margin: auto;
-      padding: 40px 20px;
+      padding: 18px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
 
-    .section {
-      margin-bottom: 50px;
+    nav h1 { font-size: 20px; }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 18px;
+      font-size: 14px;
+      flex-wrap: wrap;
     }
 
-    .project {
+    section {
+      max-width: 1120px;
+      margin: auto;
+      padding: 80px 24px;
+    }
+
+    .hero {
+      min-height: 85vh;
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 50px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 13px;
+      color: #8a6f57;
+      margin-bottom: 14px;
+      font-weight: bold;
+    }
+
+    .hero h2 {
+      font-size: 64px;
+      line-height: 1;
+      margin-bottom: 24px;
+    }
+
+    .hero p {
+      font-size: 19px;
+      color: #4b5563;
+      margin-bottom: 28px;
+      max-width: 690px;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      padding: 12px 20px;
+      border-radius: 999px;
+      border: 1px solid #1f2933;
+      font-weight: bold;
+      font-size: 14px;
+      display: inline-block;
+    }
+
+    .btn.primary {
+      background: #1f2933;
+      color: white;
+    }
+
+    .hero-card {
       background: white;
-      padding: 20px;
-      margin-top: 20px;
-      border-radius: 10px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+      border-radius: 28px;
+      padding: 32px;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.08);
     }
 
-    a {
-      color: #2563eb;
-      text-decoration: none;
+    .hero-card img {
+      width: 100%;
+      border-radius: 24px;
+      margin-bottom: 22px;
     }
 
-    a:hover {
-      text-decoration: underline;
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-top: 30px;
+    }
+
+    .stat {
+      background: white;
+      padding: 22px;
+      border-radius: 20px;
+      border: 1px solid #eadfd4;
+    }
+
+    .stat h3 {
+      font-size: 28px;
+      color: #8a6f57;
+    }
+
+    .section-title {
+      font-size: 42px;
+      margin-bottom: 16px;
+    }
+
+    .section-subtitle {
+      color: #6b7280;
+      max-width: 780px;
+      margin-bottom: 40px;
+      font-size: 18px;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 0.8fr 1.2fr;
+      gap: 40px;
+    }
+
+    .quote {
+      font-size: 38px;
+      line-height: 1.15;
+      color: #8a6f57;
+      font-weight: bold;
+    }
+
+    .location {
+      margin-top: 18px;
+      color: #6b7280;
+    }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    }
+
+    .card {
+      background: white;
+      border: 1px solid #eadfd4;
+      border-radius: 24px;
+      padding: 28px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.04);
+    }
+
+    .card .tag {
+      color: #8a6f57;
+      font-size: 13px;
+      text-transform: uppercase;
+      font-weight: bold;
+      letter-spacing: 1px;
+      margin-bottom: 10px;
+    }
+
+    .card h3 {
+      font-size: 24px;
+      margin-bottom: 12px;
+    }
+
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 16px;
+    }
+
+    .pill {
+      background: #f4eee7;
+      color: #5c4736;
+      padding: 7px 11px;
+      border-radius: 999px;
+      font-size: 13px;
+    }
+
+    .timeline {
+      display: grid;
+      gap: 24px;
+    }
+
+    .timeline-item {
+      background: white;
+      border-left: 5px solid #8a6f57;
+      padding: 26px;
+      border-radius: 18px;
+      border-top: 1px solid #eadfd4;
+      border-right: 1px solid #eadfd4;
+      border-bottom: 1px solid #eadfd4;
+    }
+
+    .timeline-item h3 {
+      font-size: 23px;
+      margin-bottom: 6px;
+    }
+
+    .meta {
+      color: #8a6f57;
+      font-weight: bold;
+      margin-bottom: 12px;
+    }
+
+    .timeline-item ul {
+      padding-left: 20px;
+      color: #4b5563;
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
     }
 
     footer {
       text-align: center;
-      padding: 30px;
-      background: #111827;
-      color: white;
+      padding: 36px 24px;
+      border-top: 1px solid #e5ded5;
+      color: #6b7280;
     }
 
-    .skills {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 15px;
-    }
+    @media (max-width: 800px) {
+      .hero, .about-grid, .card-grid, .skills-grid, .stats {
+        grid-template-columns: 1fr;
+      }
 
-    .skill {
-      background: #e5e7eb;
-      padding: 8px 14px;
-      border-radius: 20px;
-      font-size: 14px;
+      .hero h2 {
+        font-size: 44px;
+      }
+
+      nav {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 14px;
+      }
     }
   </style>
 </head>
 
 <body>
 
-  <header>
-    <img src="Image_Faria.png" alt="Faria Tabassum">
-
+<header>
+  <nav>
     <h1>Faria Tabassum</h1>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#research">Research</a></li>
+      <li><a href="#writing">Writing</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+</header>
 
+<section class="hero">
+  <div>
+    <div class="eyebrow">Analytics · AI · Finance Transformation</div>
+    <h2>Faria<br>Tabassum</h2>
     <p>
-      Data Analyst | Finance Transformation | SQL | Snowflake | Power BI | Tableau
+      Business Intelligence and analytics professional turning complex enterprise data into executive-ready insights, scalable reporting, and better business decisions.
     </p>
 
-    <p>
-      <a href="https://www.linkedin.com/in/fariatabassumecon/" target="_blank">LinkedIn</a> |
-      <a href="https://github.com/fariat14" target="_blank">GitHub</a> |
-      <a href="https://medium.com/@t.fariajune" target="_blank">Medium</a>
-    </p>
-  </header>
-
-  <div class="container">
-
-    <div class="section">
-      <h2>About Me</h2>
-
-      <p>
-        I am a Data Analyst with experience in Finance Transformation,
-        business analytics, pricing analytics, and research.
-        My background in finance and economics helps me bridge the gap
-        between technical analytics and business decision-making.
-      </p>
-
-      <p>
-        Currently, I work with SQL, Snowflake, Azure Data Factory,
-        Power BI, Tableau, and ERP data mapping initiatives.
-      </p>
+    <div class="buttons">
+      <a class="btn primary" href="#projects">View Portfolio</a>
+      <a class="btn" href="#contact">Get in Touch</a>
     </div>
 
-    <div class="section">
-      <h2>Skills</h2>
+    <div class="stats">
+      <div class="stat">
+        <h3>6+</h3>
+        <p>Years across analytics, research, finance, and data</p>
+      </div>
+      <div class="stat">
+        <h3>3+</h3>
+        <p>Years at Johnson Controls across finance, pricing, and operations</p>
+      </div>
+      <div class="stat">
+        <h3>MBA + MS</h3>
+        <p>Business Analytics, Economics, and Applied Economics</p>
+      </div>
+    </div>
+  </div>
 
-      <div class="skills">
-        <div class="skill">SQL</div>
-        <div class="skill">Snowflake</div>
-        <div class="skill">Power BI</div>
-        <div class="skill">Tableau</div>
-        <div class="skill">Excel</div>
-        <div class="skill">Python</div>
-        <div class="skill">Azure Data Factory</div>
-        <div class="skill">Data Visualization</div>
-        <div class="skill">Business Analytics</div>
+  <div class="hero-card">
+    <img src="Image_Faria.png" alt="Faria Tabassum">
+    <h3>Analytics professional based in New York</h3>
+    <p>
+      Power BI · Snowflake SQL · Azure Data Factory · Python · R · Statistics · Economics · AI-enabled analytics
+    </p>
+  </div>
+</section>
+
+<section id="about">
+  <h2 class="section-title">About Me</h2>
+
+  <div class="about-grid">
+    <div>
+      <div class="quote">
+        Clarity from complexity,<br>
+        decisions from data
+      </div>
+      <p class="location">📍 New York, USA</p>
+    </div>
+
+    <div>
+      <p>
+        I'm a Business Intelligence and analytics professional with 3+ years of experience at Johnson Controls, delivering enterprise-scale analytics solutions across Global Finance, Pricing, Field Operations, and Finance Transformation.
+      </p>
+      <br>
+      <p>
+        I specialize in translating complex datasets into executive-ready insights using Power BI, Snowflake SQL, Azure Data Factory, and enterprise data platforms. My work spans CEO-level pricing dashboards, field finance analytics, global products OTC finance transformation, STTM mapping, ETL validation, and scalable process automation.
+      </p>
+      <br>
+      <p>
+        What sets me apart is the combination of finance knowledge, research discipline, business acumen, and technical analytics. I understand not only how to build dashboards and validate data, but also what the numbers mean to stakeholders.
+      </p>
+      <br>
+      <p>
+        My work extends beyond enterprise analytics into research and public thought leadership. I have published work featured on SSRN, Google Scholar, The Business Standard, and The Financial Express — writing about innovation, sustainability, economics, education, and technology-driven transformation.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section id="experience">
+  <h2 class="section-title">Work Experience</h2>
+  <p class="section-subtitle">
+    Experience across enterprise analytics, finance transformation, pricing, market research, think tanks, teaching, and applied economics.
+  </p>
+
+  <div class="timeline">
+
+    <div class="timeline-item">
+      <div class="meta">Johnson Controls · New York / Remote</div>
+      <h3>Data Analyst · Global Products OTC Finance Transformation</h3>
+      <ul>
+        <li>Support enterprise finance transformation through source-to-target mapping, data validation, and analytics across ERP systems including Oracle Fusion, SAP S/4HANA, and iScala.</li>
+        <li>Partner with data architects, finance stakeholders, and implementation teams to validate Snowflake tables, source columns, transformation logic, and business rules.</li>
+        <li>Use SQL, Snowflake, Azure DevOps, and AI-assisted workflows to improve mapping quality and reduce manual validation effort.</li>
+      </ul>
+    </div>
+
+    <div class="timeline-item">
+      <div class="meta">Johnson Controls</div>
+      <h3>Finance / Pricing / Field Operations Analytics</h3>
+      <ul>
+        <li>Delivered analytics across Global Finance, Central Pricing, and BSNA Canada Field Finance.</li>
+        <li>Built and supported executive-facing dashboards, pricing scorecards, CEO-level reporting, price realization analysis, and weekly business performance updates.</li>
+        <li>Worked with Power BI, Excel, OneStream, Salesforce, SQL, and enterprise reporting workflows to improve visibility and decision-making.</li>
+      </ul>
+    </div>
+
+    <div class="timeline-item">
+      <div class="meta">Research, Teaching & Consulting Background</div>
+      <h3>Economics · Statistics · Market Research</h3>
+      <ul>
+        <li>Worked across market research, think tanks, graduate teaching, and applied research roles.</li>
+        <li>Built strong analytical foundations in statistics, econometrics, survey research, policy analysis, and business research.</li>
+        <li>Experienced with Python, R, Stata, SQL, Excel, Tableau, Power BI, time series, and machine learning techniques.</li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
+<section id="projects">
+  <h2 class="section-title">Projects & Portfolio</h2>
+  <p class="section-subtitle">
+    Selected analytics, dashboard, finance, research, and AI-enabled projects.
+  </p>
+
+  <div class="card-grid">
+
+    <div class="card">
+      <div class="tag">Enterprise Analytics</div>
+      <h3>Finance Transformation Data Mapping</h3>
+      <p>
+        Supported source-to-target mapping and validation for enterprise finance data across ERP systems, enabling cleaner data flow into analytics and reporting layers.
+      </p>
+      <div class="pill-row">
+        <span class="pill">Snowflake SQL</span>
+        <span class="pill">STTM</span>
+        <span class="pill">ERP Data</span>
+        <span class="pill">ETL Validation</span>
       </div>
     </div>
 
-    <div class="section">
-      <h2>Projects</h2>
-
-      <div class="project">
-        <h3>Netflix Tableau Dashboard</h3>
-
-        <p>
-          Interactive dashboard analyzing Netflix movies and TV shows
-          using Tableau visualizations.
-        </p>
-
-        <a href="https://public.tableau.com/views/NetflixDashboard_17166085114810/Netflix?:language=en-US&:display_count=n&:origin=viz_share_link" target="_blank">
-          View Project
-        </a>
+    <div class="card">
+      <div class="tag">Business Intelligence</div>
+      <h3>Executive Pricing Dashboards</h3>
+      <p>
+        Built and supported executive-ready pricing dashboards and scorecards to track price realization, major movers, margin trends, and business performance.
+      </p>
+      <div class="pill-row">
+        <span class="pill">Power BI</span>
+        <span class="pill">DAX</span>
+        <span class="pill">Pricing</span>
+        <span class="pill">Finance</span>
       </div>
+    </div>
 
-      <div class="project">
-        <h3>Citi Bike Trips Analysis</h3>
+    <div class="card">
+      <div class="tag">Tableau</div>
+      <h3>Netflix Dashboard</h3>
+      <p>
+        Created a Tableau dashboard analyzing Netflix content trends, categories, release patterns, and media distribution.
+      </p>
+      <div class="pill-row">
+        <span class="pill">Tableau</span>
+        <span class="pill">Data Visualization</span>
+        <span class="pill">Dashboard Design</span>
+      </div>
+    </div>
 
-        <p>
-          Tableau dashboard analyzing Citi Bike usage trends,
-          trip duration, and rider behavior.
-        </p>
-
-        <a href="https://public.tableau.com/views/citibiketrips_15935502394800/Feb2018?:language=en-US&:display_count=n&:origin=viz_share_link" target="_blank">
-          View Project
-        </a>
+    <div class="card">
+      <div class="tag">Urban Analytics</div>
+      <h3>Citi Bike Trips Analysis</h3>
+      <p>
+        Analyzed Citi Bike trip data to explore rider behavior, usage patterns, seasonal trends, and station-level insights.
+      </p>
+      <div class="pill-row">
+        <span class="pill">Tableau</span>
+        <span class="pill">Transportation Data</span>
+        <span class="pill">EDA</span>
       </div>
     </div>
 
   </div>
+</section>
 
-  <footer>
-    © 2026 Faria Tabassum
-  </footer>
+<section id="research">
+  <h2 class="section-title">Research & Publications</h2>
+  <p class="section-subtitle">
+    My background combines analytics, economics, applied research, and public-facing writing.
+  </p>
+
+  <div class="card-grid">
+
+    <div class="card">
+      <div class="tag">Academic Research · SSRN</div>
+      <h3>
+        <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3189100" target="_blank">
+          SSRN Publication
+        </a>
+      </h3>
+      <p>
+        Published research reflecting my foundation in economics, quantitative analysis, and applied policy research.
+      </p>
+      <div class="pill-row">
+        <span class="pill">Economics</span>
+        <span class="pill">Research</span>
+        <span class="pill">Policy</span>
+        <span class="pill">Quantitative Analysis</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="tag">Google Scholar</div>
+      <h3>
+        <a href="https://scholar.google.com/citations?hl=en&user=nnatyWcAAAAJ&view_op=list_works&gmla=AIqSsVuRUaGlQr1Zx9duZbrJFc8dgzUjWFiG6S5Ipmp6LHCERO5fywubZeFpBCA4TDoKlqT5VyqRs5byiRo5gRSi" target="_blank">
+          Google Scholar Profile
+        </a>
+      </h3>
+      <p>
+        Research profile featuring academic work, citations, and contributions across economics, analytics, business, and interdisciplinary research areas.
+      </p>
+      <div class="pill-row">
+        <span class="pill">Research</span>
+        <span class="pill">Economics</span>
+        <span class="pill">Analytics</span>
+        <span class="pill">Google Scholar</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section id="writing">
+  <h2 class="section-title">Writing & Thought Leadership</h2>
+  <p class="section-subtitle">
+    I write about innovation, economic development, sustainability, education, technology, and society — especially through the lens of emerging economies.
+  </p>
+
+  <div class="card-grid">
+
+    <div class="card">
+      <div class="tag">Innovation · Bangladesh</div>
+      <h3>
+        <a href="https://www.tbsnews.net/thoughts/unleashing-power-innovation-bangladesh-622686" target="_blank">
+          Unleashing the Power of Innovation in Bangladesh
+        </a>
+      </h3>
+      <p>
+        Explored how innovation, entrepreneurship, and technology can accelerate Bangladesh’s growth and competitiveness.
+      </p>
+      <div class="pill-row">
+        <span class="pill">Innovation</span>
+        <span class="pill">Economic Development</span>
+        <span class="pill">Technology</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="tag">Education · Society</div>
+      <h3>
+        <a href="https://thefinancialexpress.com.bd/views/views/lockdowns-toll-on-children-1605848563" target="_blank">
+          Lockdowns’ Toll on Children
+        </a>
+      </h3>
+      <p>
+        Examined the educational, psychological, and socioeconomic impact of pandemic lockdowns on children and families.
+      </p>
+      <div class="pill-row">
+        <span class="pill">Education</span>
+        <span class="pill">Public Policy</span>
+        <span class="pill">Social Impact</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="tag">Sustainability · Culture</div>
+      <h3>
+        <a href="https://www.tbsnews.net/features/panorama/while-we-lose-our-sustainable-traditions-west-pivots-opposite-direction-752446" target="_blank">
+          While We Lose Our Sustainable Traditions, The West Pivots the Opposite Direction
+        </a>
+      </h3>
+      <p>
+        Reflected on sustainability, cultural practices, and how modern societies are rediscovering traditions long embedded in South Asian lifestyles.
+      </p>
+      <div class="pill-row">
+        <span class="pill">Sustainability</span>
+        <span class="pill">Culture</span>
+        <span class="pill">Climate</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section id="skills">
+  <h2 class="section-title">Skills & Tools</h2>
+  <p class="section-subtitle">
+    Tools and methods I use to turn data into business decisions.
+  </p>
+
+  <div class="skills-grid">
+    <div class="card">
+      <h3>Business Intelligence</h3>
+      <div class="pill-row">
+        <span class="pill">Power BI</span>
+        <span class="pill">DAX</span>
+        <span class="pill">Tableau</span>
+        <span class="pill">Excel</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>Data & Engineering</h3>
+      <div class="pill-row">
+        <span class="pill">Snowflake SQL</span>
+        <span class="pill">Azure Data Factory</span>
+        <span class="pill">ETL Validation</span>
+        <span class="pill">Data Models</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>Analytics & Research</h3>
+      <div class="pill-row">
+        <span class="pill">Python</span>
+        <span class="pill">R</span>
+        <span class="pill">Stata</span>
+        <span class="pill">Statistics</span>
+        <span class="pill">Econometrics</span>
+        <span class="pill">Time Series</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>Domain Expertise</h3>
+      <div class="pill-row">
+        <span class="pill">Finance</span>
+        <span class="pill">Pricing</span>
+        <span class="pill">Market Research</span>
+        <span class="pill">Economics</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>AI & Automation</h3>
+      <div class="pill-row">
+        <span class="pill">AI-assisted Analytics</span>
+        <span class="pill">Prompting</span>
+        <span class="pill">Process Automation</span>
+        <span class="pill">ML Techniques</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>Business Strengths</h3>
+      <div class="pill-row">
+        <span class="pill">Stakeholder Partnership</span>
+        <span class="pill">Data Storytelling</span>
+        <span class="pill">Data Judgment</span>
+        <span class="pill">Executive Reporting</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="education">
+  <h2 class="section-title">Education</h2>
+
+  <div class="timeline">
+
+    <div class="timeline-item">
+      <div class="meta">University of Wisconsin-Milwaukee</div>
+      <h3>MBA, Business Analytics</h3>
+      <p>
+        Focused on business analytics, data-driven decision-making, finance, and applied business strategy.
+      </p>
+    </div>
+
+    <div class="timeline-item">
+      <div class="meta">North Dakota State University</div>
+      <h3>MS, Agribusiness & Applied Economics</h3>
+      <p>
+        Graduate training in applied economics, quantitative analysis, statistics, and research methods.
+      </p>
+    </div>
+
+    <div class="timeline-item">
+      <div class="meta">University of Dhaka</div>
+      <h3>Bachelor of Science in Economics</h3>
+      <p>
+        Built a strong foundation in economics, statistics, econometrics, and analytical thinking.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<section id="contact">
+  <h2 class="section-title">Let’s Connect</h2>
+  <p class="section-subtitle">
+    I’m interested in analytics, business intelligence, AI-enabled data products, finance transformation, and strategy-focused data roles.
+  </p>
+
+  <div class="buttons">
+    <a class="btn primary" href="mailto:t.fariajune@gmail.com">Email Me</a>
+    <a class="btn" href="https://www.linkedin.com/in/fariatabassumecon" target="_blank">LinkedIn</a>
+    <a class="btn" href="https://github.com/fariat14" target="_blank">GitHub</a>
+    <a class="btn" href="https://scholar.google.com/citations?hl=en&user=nnatyWcAAAAJ&view_op=list_works&gmla=AIqSsVuRUaGlQr1Zx9duZbrJFc8dgzUjWFiG6S5Ipmp6LHCERO5fywubZeFpBCA4TDoKlqT5VyqRs5byiRo5gRSi" target="_blank">Google Scholar</a>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 Faria Tabassum · Analytics & AI Portfolio</p>
+</footer>
 
 </body>
 </html>
