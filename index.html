@@ -1,24 +1,27 @@
+
+
+Index · HTML
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Faria Tabassum | Analytics & AI Portfolio</title>
-
+ 
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
-
+ 
     html { scroll-behavior: smooth; }
-
+ 
     body {
       font-family: Arial, sans-serif;
       background: #faf7f2;
       color: #1f2933;
       line-height: 1.6;
     }
-
+ 
     a { color: inherit; text-decoration: none; }
-
+ 
     header {
       position: sticky;
       top: 0;
@@ -26,7 +29,7 @@
       background: rgba(250, 247, 242, 0.95);
       border-bottom: 1px solid #e5ded5;
     }
-
+ 
     nav {
       max-width: 1120px;
       margin: auto;
@@ -35,9 +38,9 @@
       justify-content: space-between;
       align-items: center;
     }
-
+ 
     nav h1 { font-size: 20px; }
-
+ 
     nav ul {
       list-style: none;
       display: flex;
@@ -45,13 +48,13 @@
       font-size: 14px;
       flex-wrap: wrap;
     }
-
+ 
     section {
       max-width: 1120px;
       margin: auto;
       padding: 80px 24px;
     }
-
+ 
     .hero {
       min-height: 85vh;
       display: grid;
@@ -59,7 +62,7 @@
       gap: 50px;
       align-items: center;
     }
-
+ 
     .eyebrow {
       text-transform: uppercase;
       letter-spacing: 2px;
@@ -68,26 +71,26 @@
       margin-bottom: 14px;
       font-weight: bold;
     }
-
+ 
     .hero h2 {
       font-size: 64px;
       line-height: 1;
       margin-bottom: 24px;
     }
-
+ 
     .hero p {
       font-size: 19px;
       color: #4b5563;
       margin-bottom: 28px;
       max-width: 690px;
     }
-
+ 
     .buttons {
       display: flex;
       gap: 14px;
       flex-wrap: wrap;
     }
-
+ 
     .btn {
       padding: 12px 20px;
       border-radius: 999px;
@@ -96,80 +99,80 @@
       font-size: 14px;
       display: inline-block;
     }
-
+ 
     .btn.primary {
       background: #1f2933;
       color: white;
     }
-
+ 
     .hero-card {
       background: white;
       border-radius: 28px;
       padding: 32px;
       box-shadow: 0 20px 50px rgba(0,0,0,0.08);
     }
-
+ 
     .hero-card img {
       width: 100%;
       border-radius: 24px;
       margin-bottom: 22px;
     }
-
+ 
     .stats {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 18px;
       margin-top: 30px;
     }
-
+ 
     .stat {
       background: white;
       padding: 22px;
       border-radius: 20px;
       border: 1px solid #eadfd4;
     }
-
+ 
     .stat h3 {
       font-size: 28px;
       color: #8a6f57;
     }
-
+ 
     .section-title {
       font-size: 42px;
       margin-bottom: 16px;
     }
-
+ 
     .section-subtitle {
       color: #6b7280;
       max-width: 780px;
       margin-bottom: 40px;
       font-size: 18px;
     }
-
+ 
     .about-grid {
       display: grid;
       grid-template-columns: 0.8fr 1.2fr;
       gap: 40px;
     }
-
+ 
     .quote {
       font-size: 38px;
       line-height: 1.15;
       color: #8a6f57;
       font-weight: bold;
     }
-
+ 
     .location {
       margin-top: 18px;
       color: #6b7280;
     }
-
+ 
     .card-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 24px;
     }
-
+ 
     .card {
       background: white;
       border: 1px solid #eadfd4;
@@ -177,7 +180,7 @@
       padding: 28px;
       box-shadow: 0 10px 30px rgba(0,0,0,0.04);
     }
-
+ 
     .card .tag {
       color: #8a6f57;
       font-size: 13px;
@@ -186,19 +189,19 @@
       letter-spacing: 1px;
       margin-bottom: 10px;
     }
-
+ 
     .card h3 {
       font-size: 24px;
       margin-bottom: 12px;
     }
-
+ 
     .pill-row {
       display: flex;
       flex-wrap: wrap;
       gap: 8px;
       margin-top: 16px;
     }
-
+ 
     .pill {
       background: #f4eee7;
       color: #5c4736;
@@ -206,12 +209,12 @@
       border-radius: 999px;
       font-size: 13px;
     }
-
+ 
     .timeline {
       display: grid;
       gap: 24px;
     }
-
+ 
     .timeline-item {
       background: white;
       border-left: 5px solid #8a6f57;
@@ -221,45 +224,45 @@
       border-right: 1px solid #eadfd4;
       border-bottom: 1px solid #eadfd4;
     }
-
+ 
     .timeline-item h3 {
       font-size: 23px;
       margin-bottom: 6px;
     }
-
+ 
     .meta {
       color: #8a6f57;
       font-weight: bold;
       margin-bottom: 12px;
     }
-
+ 
     .timeline-item ul {
       padding-left: 20px;
       color: #4b5563;
     }
-
+ 
     .skills-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 22px;
     }
-
+ 
     footer {
       text-align: center;
       padding: 36px 24px;
       border-top: 1px solid #e5ded5;
       color: #6b7280;
     }
-
+ 
     @media (max-width: 800px) {
       .hero, .about-grid, .card-grid, .skills-grid, .stats {
         grid-template-columns: 1fr;
       }
-
+ 
       .hero h2 {
         font-size: 44px;
       }
-
+ 
       nav {
         align-items: flex-start;
         flex-direction: column;
@@ -267,10 +270,14 @@
       }
     }
   </style>
+ 
+  <!-- GoatCounter analytics — replace YOUR-SITE-CODE after you register at goatcounter.com -->
+  <script data-goatcounter="https://YOUR-SITE-CODE.goatcounter.com/count"
+          async src="//gc.zgo.at/count.js"></script>
 </head>
-
+ 
 <body>
-
+ 
 <header>
   <nav>
     <h1>Faria Tabassum</h1>
@@ -285,7 +292,7 @@
     </ul>
   </nav>
 </header>
-
+ 
 <section class="hero">
   <div>
     <div class="eyebrow">Analytics · AI · Finance Transformation</div>
@@ -293,12 +300,12 @@
     <p>
       Business Intelligence and analytics professional turning complex enterprise data into executive-ready insights, scalable reporting, and better business decisions.
     </p>
-
+ 
     <div class="buttons">
       <a class="btn primary" href="#projects">View Portfolio</a>
       <a class="btn" href="#contact">Get in Touch</a>
     </div>
-
+ 
     <div class="stats">
       <div class="stat">
         <h3>6+</h3>
@@ -314,7 +321,7 @@
       </div>
     </div>
   </div>
-
+ 
   <div class="hero-card">
     <img src="Image_Faria.png" alt="Faria Tabassum">
     <h3>Analytics professional based in New York</h3>
@@ -323,10 +330,10 @@
     </p>
   </div>
 </section>
-
+ 
 <section id="about">
   <h2 class="section-title">About Me</h2>
-
+ 
   <div class="about-grid">
     <div>
       <div class="quote">
@@ -335,7 +342,7 @@
       </div>
       <p class="location">📍 New York, USA</p>
     </div>
-
+ 
     <div>
       <p>
         I'm a Business Intelligence and analytics professional with 3+ years of experience at Johnson Controls, delivering enterprise-scale analytics solutions across Global Finance, Pricing, Field Operations, and Finance Transformation.
@@ -355,15 +362,15 @@
     </div>
   </div>
 </section>
-
+ 
 <section id="experience">
   <h2 class="section-title">Work Experience</h2>
   <p class="section-subtitle">
     Experience across enterprise analytics, finance transformation, pricing, market research, think tanks, teaching, and applied economics.
   </p>
-
+ 
   <div class="timeline">
-
+ 
     <div class="timeline-item">
       <div class="meta">Johnson Controls · New York / Remote</div>
       <h3>Data Analyst · Global Products OTC Finance Transformation</h3>
@@ -373,7 +380,7 @@
         <li>Use SQL, Snowflake, Azure DevOps, and AI-assisted workflows to improve mapping quality and reduce manual validation effort.</li>
       </ul>
     </div>
-
+ 
     <div class="timeline-item">
       <div class="meta">Johnson Controls</div>
       <h3>Finance / Pricing / Field Operations Analytics</h3>
@@ -383,7 +390,7 @@
         <li>Worked with Power BI, Excel, OneStream, Salesforce, SQL, and enterprise reporting workflows to improve visibility and decision-making.</li>
       </ul>
     </div>
-
+ 
     <div class="timeline-item">
       <div class="meta">Research, Teaching & Consulting Background</div>
       <h3>Economics · Statistics · Market Research</h3>
@@ -393,18 +400,18 @@
         <li>Experienced with Python, R, Stata, SQL, Excel, Tableau, Power BI, time series, and machine learning techniques.</li>
       </ul>
     </div>
-
+ 
   </div>
 </section>
-
+ 
 <section id="projects">
   <h2 class="section-title">Projects & Portfolio</h2>
   <p class="section-subtitle">
     Selected analytics, dashboard, finance, research, and AI-enabled projects.
   </p>
-
+ 
   <div class="card-grid">
-
+ 
     <div class="card">
       <div class="tag">Enterprise Analytics</div>
       <h3>Finance Transformation Data Mapping</h3>
@@ -418,7 +425,7 @@
         <span class="pill">ETL Validation</span>
       </div>
     </div>
-
+ 
     <div class="card">
       <div class="tag">Business Intelligence</div>
       <h3>Executive Pricing Dashboards</h3>
@@ -432,7 +439,7 @@
         <span class="pill">Finance</span>
       </div>
     </div>
-
+ 
     <div class="card">
       <div class="tag">Tableau</div>
       <h3>Netflix Dashboard</h3>
@@ -445,7 +452,7 @@
         <span class="pill">Dashboard Design</span>
       </div>
     </div>
-
+ 
     <div class="card">
       <div class="tag">Urban Analytics</div>
       <h3>Citi Bike Trips Analysis</h3>
@@ -458,18 +465,18 @@
         <span class="pill">EDA</span>
       </div>
     </div>
-
+ 
   </div>
 </section>
-
+ 
 <section id="research">
   <h2 class="section-title">Research & Publications</h2>
   <p class="section-subtitle">
     My background combines analytics, economics, applied research, and public-facing writing.
   </p>
-
+ 
   <div class="card-grid">
-
+ 
     <div class="card">
       <div class="tag">Academic Research · SSRN</div>
       <h3>
@@ -487,7 +494,7 @@
         <span class="pill">Quantitative Analysis</span>
       </div>
     </div>
-
+ 
     <div class="card">
       <div class="tag">Google Scholar</div>
       <h3>
@@ -505,18 +512,18 @@
         <span class="pill">Google Scholar</span>
       </div>
     </div>
-
+ 
   </div>
 </section>
-
+ 
 <section id="writing">
   <h2 class="section-title">Writing & Thought Leadership</h2>
   <p class="section-subtitle">
     I write about innovation, economic development, sustainability, education, technology, and society — especially through the lens of emerging economies.
   </p>
-
+ 
   <div class="card-grid">
-
+ 
     <div class="card">
       <div class="tag">Innovation · Bangladesh</div>
       <h3>
@@ -533,7 +540,7 @@
         <span class="pill">Technology</span>
       </div>
     </div>
-
+ 
     <div class="card">
       <div class="tag">Education · Society</div>
       <h3>
@@ -550,7 +557,7 @@
         <span class="pill">Social Impact</span>
       </div>
     </div>
-
+ 
     <div class="card">
       <div class="tag">Sustainability · Culture</div>
       <h3>
@@ -567,16 +574,16 @@
         <span class="pill">Climate</span>
       </div>
     </div>
-
+ 
   </div>
 </section>
-
+ 
 <section id="skills">
   <h2 class="section-title">Skills & Tools</h2>
   <p class="section-subtitle">
     Tools and methods I use to turn data into business decisions.
   </p>
-
+ 
   <div class="skills-grid">
     <div class="card">
       <h3>Business Intelligence</h3>
@@ -587,7 +594,7 @@
         <span class="pill">Excel</span>
       </div>
     </div>
-
+ 
     <div class="card">
       <h3>Data & Engineering</h3>
       <div class="pill-row">
@@ -597,7 +604,7 @@
         <span class="pill">Data Models</span>
       </div>
     </div>
-
+ 
     <div class="card">
       <h3>Analytics & Research</h3>
       <div class="pill-row">
@@ -609,7 +616,7 @@
         <span class="pill">Time Series</span>
       </div>
     </div>
-
+ 
     <div class="card">
       <h3>Domain Expertise</h3>
       <div class="pill-row">
@@ -619,7 +626,7 @@
         <span class="pill">Economics</span>
       </div>
     </div>
-
+ 
     <div class="card">
       <h3>AI & Automation</h3>
       <div class="pill-row">
@@ -629,7 +636,7 @@
         <span class="pill">ML Techniques</span>
       </div>
     </div>
-
+ 
     <div class="card">
       <h3>Business Strengths</h3>
       <div class="pill-row">
@@ -641,12 +648,12 @@
     </div>
   </div>
 </section>
-
+ 
 <section id="education">
   <h2 class="section-title">Education</h2>
-
+ 
   <div class="timeline">
-
+ 
     <div class="timeline-item">
       <div class="meta">University of Wisconsin-Milwaukee</div>
       <h3>MBA, Business Analytics</h3>
@@ -654,7 +661,7 @@
         Focused on business analytics, data-driven decision-making, finance, and applied business strategy.
       </p>
     </div>
-
+ 
     <div class="timeline-item">
       <div class="meta">North Dakota State University</div>
       <h3>MS, Agribusiness & Applied Economics</h3>
@@ -662,7 +669,7 @@
         Graduate training in applied economics, quantitative analysis, statistics, and research methods.
       </p>
     </div>
-
+ 
     <div class="timeline-item">
       <div class="meta">University of Dhaka</div>
       <h3>Bachelor of Science in Economics</h3>
@@ -670,16 +677,16 @@
         Built a strong foundation in economics, statistics, econometrics, and analytical thinking.
       </p>
     </div>
-
+ 
   </div>
 </section>
-
+ 
 <section id="contact">
   <h2 class="section-title">Let’s Connect</h2>
   <p class="section-subtitle">
     I’m interested in analytics, business intelligence, AI-enabled data products, finance transformation, and strategy-focused data roles.
   </p>
-
+ 
   <div class="buttons">
     <a class="btn primary" href="mailto:t.fariajune@gmail.com">Email Me</a>
     <a class="btn" href="https://www.linkedin.com/in/fariatabassumecon" target="_blank">LinkedIn</a>
@@ -687,10 +694,12 @@
     <a class="btn" href="https://scholar.google.com/citations?hl=en&user=nnatyWcAAAAJ&view_op=list_works&gmla=AIqSsVuRUaGlQr1Zx9duZbrJFc8dgzUjWFiG6S5Ipmp6LHCERO5fywubZeFpBCA4TDoKlqT5VyqRs5byiRo5gRSi" target="_blank">Google Scholar</a>
   </div>
 </section>
-
+ 
 <footer>
   <p>© 2026 Faria Tabassum · Analytics & AI Portfolio</p>
 </footer>
-
+ 
 </body>
 </html>
+ 
+
